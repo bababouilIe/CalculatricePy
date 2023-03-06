@@ -5,7 +5,7 @@ def retrieveInput(nombre):
     nombres=""
     nombre=textBox.get("1.0",END)
     nombres+=nombre
-    print(nombre)
+    afficherTextBox(nombres)
     
 def setNumber(nombre):
     pass
@@ -15,8 +15,7 @@ def addition(nombre)-> None:
     
 def afficherTextBox(nombre):
     nombre=str(nombre)
-    textBox.delete('1.0', END)
-    textBox.insert(nombre)
+    textBox.config(text=nombre)
 
 def soustraire(nombre,nombre2)-> DoubleVar:
     nombre=nombre-nombre2
@@ -35,14 +34,10 @@ window.geometry("180x300")
 disp = Entry(window, state='readonly', readonlybackground="white")
 disp.grid(column=0, row=0, columnspan=4)
 done=False
-#label=tk.Label(window, 
-               #text="Hello World",
-               #foreground="red",
-               #background="black")
-#label.pack(side=BOTTOM)
 
-#var=tk.IntVar()
-textBox=Text(window, height=3, width=10)
+
+
+textBox=tk.Label(window, height=3, width=10)
 textBox.grid(column=1,row=3,columnspan=2)
 
 
