@@ -1,13 +1,22 @@
 from tkinter import *
 import tkinter as tk
 
-def retrieveInput():
-    input=textBox.get("1.0",END)
-    print(input)
+def retrieveInput(nombre):
+    nombres=""
+    nombre=textBox.get("1.0",END)
+    nombres+=nombre
+    print(nombre)
+    
+def setNumber(nombre):
+    pass
+    
 def addition(nombre)-> None:
     nombre=nombre+nombre2
     
-    
+def afficherTextBox(nombre):
+    nombre=str(nombre)
+    textBox.delete('1.0', END)
+    textBox.insert(nombre)
 
 def soustraire(nombre,nombre2)-> DoubleVar:
     nombre=nombre-nombre2
@@ -37,8 +46,9 @@ textBox=Text(window, height=3, width=10)
 textBox.grid(column=1,row=3,columnspan=2)
 
 
-#nombre=input("premier nombre")
-buttonPLUS=tk.Button(window,text="+",width=5,height=3,command=lambda:retrieveInput())
+
+nombre=0
+buttonPLUS=tk.Button(window,text="+",width=5,height=3,command=lambda:retrieveInput(nombre))
 buttonPLUS.grid(row=0,column=3,sticky='nesw')
 
 buttonMINUS=tk.Button(window, text="-",width=5,height=3)
@@ -53,7 +63,7 @@ buttonDIVIDE.grid(row=3,column=3,sticky='nesw')
 buttonEqual=tk.Button(window, text="=",width=5,height=3)
 buttonEqual.grid(row=4,column=3,sticky='nesw')
 
-one=Button(window,text="1",width=5,height=3)
+one=Button(window,text="1",width=5,height=3,command=afficherTextBox(1))
 one.grid(column=0,row=2,sticky='nsew')
 two=Button(window,text="2",width=5,height=3)
 two.grid(column=1,row=2,sticky='nsew')
@@ -73,7 +83,6 @@ nine=Button(window,text="9",width=5,height=3)
 nine.grid(column=2,row=0,sticky='nsew')
 zero=Button(window,text="0",width=5,height=3)
 zero.grid(column=0,row=3,sticky='nsew')
-
 
 
 
