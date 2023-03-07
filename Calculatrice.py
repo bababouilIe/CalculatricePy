@@ -58,6 +58,8 @@ buttonEqual = tk.Button(window, text="=", width=5,
                         height=3, command= (lambda:retrieveInput()))
 buttonEqual.grid(row=4, column=3, sticky='nesw')
 
+buttonPoint=tk.Button(window, text=".",width=5,height=3,command=(lambda:afficherTextBox(".")))
+buttonPoint.grid(row=4,column=0,sticky='nsew')
 one = Button(window, text="1", width=5, height=3,
              command=(lambda: afficherTextBox(1)))
 one.grid(column=0, row=2, sticky='nsew')
